@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.jivesoftware.sdk.definition.api.JiveActivity;
 
-public class WebhookActivity implements Serializable {
+public class WebhookActivity implements Serializable, BaseWebhook {
 
 	/**
 	 * 

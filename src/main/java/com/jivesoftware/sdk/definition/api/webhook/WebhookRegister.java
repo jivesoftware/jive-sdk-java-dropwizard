@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.jivesoftware.sdk.definition.api.JiveResource;
 
-public class WebhookRegister implements Serializable {
+public class WebhookRegister implements Serializable, BaseWebhook  {
 	
 	/**
 	 * 
