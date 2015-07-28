@@ -1,1 +1,0 @@
-Put html files here, in /src/main/resources/assets.  Files in this directory, and any subdirectories will be accessible from the root directory of the server.
