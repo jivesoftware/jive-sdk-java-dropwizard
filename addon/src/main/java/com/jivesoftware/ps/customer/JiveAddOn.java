@@ -1,6 +1,7 @@
 package com.jivesoftware.ps.customer;
 
 import com.jivesoftware.ps.addons.AbstractApplication;
+import com.jivesoftware.ps.customer.healthcheck.AddonAlive;
 import io.dropwizard.Configuration;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
@@ -39,6 +40,7 @@ public class JiveAddOn extends AbstractApplication<Configuration> {
      */
     @Override
     public void onRun(Configuration configuration, Environment environment) throws Exception {
+        environment.healthChecks().register("live", new AddonAlive());
         environment.jersey().setUrlPattern("/api/*");
     }
 
