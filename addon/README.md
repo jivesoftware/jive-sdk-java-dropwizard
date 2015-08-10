@@ -1,0 +1,1 @@
+The addon sub-module is intended to house all of the code an assets that are common to all apps, tiles, etc. etc.
