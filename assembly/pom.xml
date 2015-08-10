@@ -21,6 +21,11 @@
             <artifactId>addon</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.jivesoftware.ps</groupId>
+            <artifactId>hello-world-app</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

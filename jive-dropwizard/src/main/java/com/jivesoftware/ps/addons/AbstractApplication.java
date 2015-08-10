@@ -5,6 +5,9 @@ import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import org.reflections.Reflections;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,6 +19,8 @@ import java.util.Set;
  * @since 1.0.0
  */
 public abstract class AbstractApplication<T extends Configuration> extends Application<T> {
+
+    private final Logger LOGGER = LoggerFactory.getLogger(AbstractApplication.class);
 
     protected final Set<App> registeredApps;
 
@@ -52,6 +57,7 @@ public abstract class AbstractApplication<T extends Configuration> extends Appli
         super.initialize(bootstrap);
         this.onInitialize(bootstrap);
         for (App app : registeredApps) {
+            LOGGER.info("Initializing the " + app.getName());
             app.onInitialize(bootstrap);
         }
     }
@@ -77,6 +83,19 @@ public abstract class AbstractApplication<T extends Configuration> extends Appli
      */
     protected Set<App> findApps() {
         Set<App> discoveredApps = new HashSet<App>();
+
+        Reflections reflections = Reflections.collect();
+        Set<Class<? extends App>> appClasses = reflections.getSubTypesOf(com.jivesoftware.ps.apps.App.class);
+        ClassLoader classLoader = this.getClass().getClassLoader();
+        for (Class appClass : appClasses) {
+            try {
+                discoveredApps.add((com.jivesoftware.ps.apps.App) appClass.newInstance());
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
         return discoveredApps;
     }
 }
