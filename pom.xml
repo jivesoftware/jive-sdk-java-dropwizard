@@ -12,6 +12,7 @@
         <module>java-api-wrapper</module>
         <module>web</module>
         <module>addon</module>
+        <module>jive-dropwizard</module>
     </modules>
 
     <properties>
