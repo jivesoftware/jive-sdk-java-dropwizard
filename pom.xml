@@ -13,6 +13,7 @@
         <module>web</module>
         <module>addon</module>
         <module>jive-dropwizard</module>
+        <module>hello-world-app</module>
     </modules>
 
     <properties>

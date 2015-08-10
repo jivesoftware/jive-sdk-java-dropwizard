@@ -1,0 +1,1 @@
+Example app within the Add-On to demonstrate serving up static asserts and registering resources within an app
