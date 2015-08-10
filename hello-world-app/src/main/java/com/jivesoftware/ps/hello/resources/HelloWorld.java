@@ -20,11 +20,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import com.google.common.base.Optional;
+import com.jivesoftware.ps.hello.models.Greeting;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
 
 /**
  * Created by chris.dempsey on 8/10/15.
@@ -37,6 +39,6 @@ public class HelloWorld {
 
     @GET
     public Response sayHello(@QueryParam("name") Optional<String> name) {
-        return Response.ok("{ \"response\": \"Hello World!\" }").build();
+        return Response.ok(new Greeting()).build();
     }
 }

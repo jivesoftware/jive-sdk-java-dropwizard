@@ -9,7 +9,7 @@ This project is an example of using [Dropwizard.io](http://www.dropwizard.io) to
 * Maven 3.3.x or later
 
 # Running the Project
-Once the project is built you can run the example by navigating to the assembly/target/jive-example-1.0.0-SNAPSHOT-server directory:
+Once the project is built you can run the example by navigating to the assembly/target/jive-example-1.0.0-SNAPSHOT-server directory then
 1. chmod +x start*
 2. ./start.sh
 
