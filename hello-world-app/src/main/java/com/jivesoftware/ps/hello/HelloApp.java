@@ -22,7 +22,7 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
 /**
- *
+ * Starting class for the Hello App.
  *
  * @see App
  */
