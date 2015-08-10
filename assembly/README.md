@@ -1,0 +1,1 @@
+Maven sub-module for pulling the Add-On together into a deployable unit.
