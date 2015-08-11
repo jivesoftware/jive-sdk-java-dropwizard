@@ -1,0 +1,11 @@
+{
+  "clientUrl": "tenancy://jive!services.exampleAddon.serviceURL",
+  "skipCreateExtension": "true",
+  "logLevel":  "TRACE",
+  "extensionInfo": {
+    "uuid": "734a86d4-b3b1-4e25-b023-3a8b9aaac554",
+    "name": "Example Jive-Dropwizard.io App",
+    "description": "Simple hello world style Add-On built as an example of the Jive-Dropwizard.io",
+    "jiveServiceSignature": "<<< replace me >>>"
+  }
+}
